@@ -22,7 +22,7 @@ export const sendingOtpToPhone = async (
     console.log(phone_number);
     try {
       await client.verify.v2
-        ?.services(process.env.TWILIO_SERVICE_SID!)
+        .services(process.env.TWILIO_SERVICE_SID!)
         .verifications.create({
           channel: "sms",
           to: phone_number,
