@@ -21,7 +21,7 @@ export const registerUser = async (
     const { phone_number } = req.body;
     try {
       await client.verify.v2
-        ?.services(process.env.TWILIO_SERVICE_SID!)
+        .services(process.env.TWILIO_SERVICE_SID!)
         .verifications.create({
           channel: "sms",
           to: phone_number,
